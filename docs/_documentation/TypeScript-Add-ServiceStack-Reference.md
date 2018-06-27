@@ -274,11 +274,15 @@ const client = new JsonServiceClient("http://techstacks.io");
 const request = new GetTechnology();
 request.Slug = "ServiceStack";
 
-var r = await client.get(request);  // typed to GetTechnologyResponse
-cont tech = r.Technology;           // typed to Technology
+async function GetResponse() {
+    return await client.get(request);  // typed to GetTechnologyResponse
+}
 
-console.log(`${tech.Name} by ${tech.VendorName} (${tech.ProductUrl})`);
-console.log(`${tech.Name} TechStacks:`, r.TechnologyStacks);
+GetResponse().then((r) => {
+    var tech = r.Technology;    // typed to Technology
+    console.log(`${tech.Name} by ${tech.VendorName} (${tech.ProductUrl})`);
+    console.log(`${tech.Name} TechStacks:`, r.TechnologyStacks);
+});
 ```
 
 ### Sending additional arguments with Typed API Requests
