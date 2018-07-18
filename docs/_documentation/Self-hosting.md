@@ -3,7 +3,7 @@ slug: self-hosting
 ---
 The quickest way to create a Self-Hosting application is to Create a new self-hosting VS.NET Project Template from [ServiceStackVS VS.NET Extension](https://github.com/ServiceStack/ServiceStackVS#servicestack-vsnet-templates).
 
-Otherwise it's very easy to host ServiceStack in a Console App or Windows Service. You just have to Install the [ServiceStack NuGet package](https://www.nuget.org/packages/ServiceStack) and derive your AppHost from `AppSelfHostBase` instead of `AppHostBase`:
+Otherwise it's very easy to host ServiceStack in a Console App or Windows Service. You just have to Install the [ServiceStack NuGet package](https://www.nuget.org/packages/ServiceStack) and derive your AppHost from `AppHostBase`:
 
 ### Complete C# Console Host Example
 
@@ -31,7 +31,7 @@ class Program
     }
 
     //Define the Web Services AppHost
-    public class AppHost : AppSelfHostBase {
+    public class AppHost : AppHostBase {
         public AppHost() 
           : base("HttpListener Self-Host", typeof(HelloService).Assembly) {}
 
@@ -81,7 +81,7 @@ Public Class Program
 
     ' Define the Web Services AppHost
     Public Class AppHost
-        Inherits AppSelfHostBase
+        Inherits AppHostBase
 
         Public Sub New()
             MyBase.New("HttpListener Self-Host", GetType(HelloService).Assembly)
@@ -120,7 +120,7 @@ type HelloService() =
  
 //Define the Web Services AppHost
 type AppHost =
-    inherit AppSelfHostBase 
+    inherit AppHostBase 
     new() = { inherit AppSelfHostBase("Hello F# Services", typeof<HelloService>.Assembly) }
     override this.Configure container =
         base.Routes
