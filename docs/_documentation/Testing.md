@@ -12,6 +12,8 @@ The tests in [ServiceStack.WebHost.Endpoints.Tests](https://github.com/ServiceSt
 
 ## Integration Testing
 
+If your test project is targeting netcore, `AppSelfHostBase` is available in the `ServiceStack.Kestrel` package.
+
 The [CustomerRestExample.cs](https://github.com/ServiceStack/ServiceStack/blob/master/tests/ServiceStack.WebHost.Endpoints.Tests/CustomerRestExample.cs) shows an example of a stand-alone integration test. Integration tests in ServiceStack just involves starting a standard [self-host](/self-hosting) ServiceStack Instance when the Test Fixture Starts up and disposing it when it tears down. Your integration tests can then communicate with the self-host exactly the same as if it were a remote ServiceStack instance (since that's all it is), e.g:
 
 ```csharp
