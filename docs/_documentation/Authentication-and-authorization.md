@@ -326,7 +326,7 @@ By default the AuthFeature plugin automatically registers the following (overrid
 ```csharp
 new AuthFeature = {
   ServiceRoutes = new Dictionary<Type, string[]> {
-    { typeof(AuthService), new[]{"/auth", "/auth/{provider}"} },
+    { typeof(AuthenticateService), new[]{"/auth", "/auth/{provider}"} },
     { typeof(AssignRolesService), new[]{"/assignroles"} },
     { typeof(UnAssignRolesService), new[]{"/unassignroles"} },
   }
