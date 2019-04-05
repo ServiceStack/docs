@@ -10,7 +10,7 @@ We can use `web +` (read as "apply gist") to create light-weight customized proj
 One of the major benefits of this approach is that it's not only limited at project creation time as it's also a great way to easily add 
 "layered functionality" to existing projects.
 
-We cam see an example of this earlier with how we can use this to 
+We can see an example of this earlier with how we can use this to 
 [easily update dependencies in "lite" projects](/templates-lite#updating-lite-project-dependencies)
 which is just applying the **vue-lite-lib** and **react-lite-lib** gists to your existing "lite" projects:
 
