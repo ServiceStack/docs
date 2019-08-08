@@ -39,7 +39,7 @@ Which will generate a new project with the folder names and source files replace
 
 ### Visual Studio
 
-You can run then run the `Acme.sln` in VS .NET 2017+ which will automatically restore and install both the .NET and npm packages when first loaded. This can take a bit of time to install everything, once it's finished you'll see the `wwwroot` folder populated with your generated Webpack app which includes a `dist` folder and `index.html` page. After these are generated you can run your App with **F5** as normal. 
+You can open then run the `Acme.sln` in VS .NET 2017+ which will automatically restore and install both the .NET and npm packages when first loaded. This can take a bit of time to install everything, once it's finished you'll see the `wwwroot` folder populated with your generated Webpack app which includes a `dist` folder and `index.html` page. After these are generated you can run your App with **F5** as normal. 
 
 ### VS Code and Project Rider
 
