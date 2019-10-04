@@ -51,7 +51,7 @@ public class HelloResponse
 }
 ```
 
-The `Route` attribute is specifying what path `/hello/{Name}` where `{Name}` binds it's value to the public string property of **Name**.
+The `Route` attribute is specifying what path `/hello/{Name}` where `{Name}` binds its value to the public string property of **Name**.
 
 Let's access the route to see what comes back. Go to the following URL in your address bar, where <root_path> is your server address.
 
