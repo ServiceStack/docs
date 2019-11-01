@@ -76,7 +76,6 @@ public class Service : IService
     IDbConnection Db { get; }                 //Registered ADO.NET IDbConnection
     IRedisClient Redis { get; }               //Registered RedisClient 
     IMessageProducer MessageProducer { get; } //Message Producer for Registered MQ Server
-    IServiceGateway Gateway { get; }          //Service Gateway
     IAuthRepository AuthRepository { get; }   //Registered User Repository
     ISession SessionBag { get; }              //Dynamic Session Bag
     TUserSession SessionAs<TUserSession>();   //Resolve Typed UserSession
