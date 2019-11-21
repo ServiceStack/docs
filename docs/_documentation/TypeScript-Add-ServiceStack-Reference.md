@@ -29,7 +29,7 @@ message-based API. You can see an example of this is below which shows how to cr
 [@servicestack/client](https://www.npmjs.com/package/@servicestack/client) npm package: 
 
 ```ts
-import { JsonServiceClient } from 'servicesack-client';
+import { JsonServiceClient } from 'servicestack-client';
 import { StoreGist, GithubFile } from './Gistlyn.dtos';
 
 var client = new JsonServiceClient("http://gistlyn.com");
