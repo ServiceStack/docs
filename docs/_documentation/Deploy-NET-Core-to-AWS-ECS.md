@@ -90,7 +90,7 @@ Images with [Docker for Windows](https://docs.docker.com/docker-for-windows/).
 The basic steps for deploy your .NET Core App with Docker that's covered in this guide include:
 
  1. Creating a `ecsInstanceRole` Role that your **EC2 Instance** will run as
- 2. Creatnig a `ecsDemoUser` User for remotely running AWS CLI utils to deploy to your AWS Account
+ 2. Creating a `ecsDemoUser` User for remotely running AWS CLI utils to deploy to your AWS Account
  3. Launching a new **EC2 Instance** with the `ecsInstanceRole` Role to use as your Docker Server
  4. Configuring DNS and associating an **Elastic IP** to the new **EC2 Instance**
  5. SSH into the **EC2 Instance** to run the `nginx-proxy` Docker Container
