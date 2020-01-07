@@ -291,6 +291,14 @@ AppSettings.Set("Poco", new MyConfig { Foo = "Baz" });
 
 In providers that support writable configuration natively like `OrmLiteAppSettings` and `DictionarySettings`, the settings get written through to the underlying provider. For read-only providers like Web.config's `AppSettings` or `TextFileSettings` a **shadowed** cache is kept that works similar to prototypal shadowing in JavaScript where if a property doesn't exist, setting a property will be stored on the top-level object instance which also takes precedence on subsequent property access.
 
+# IConfiguration
+
+To create AppSettings from IConfiguration object
+
+```csharp
+AppSettings = = new NetCoreAppSettings(configuration);
+```
+
 # Community AppSettings
 
 ## [ServiceStack.Configuration.Consul](https://github.com/MacLeanElectrical/servicestack-configuration-consul)
