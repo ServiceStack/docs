@@ -296,7 +296,7 @@ In providers that support writable configuration natively like `OrmLiteAppSettin
 To create AppSettings from IConfiguration object
 
 ```csharp
-AppSettings = = new NetCoreAppSettings(configuration);
+AppSettings = new NetCoreAppSettings(configuration);
 ```
 
 # Community AppSettings
