@@ -107,4 +107,4 @@ additional aspects of a ServiceStack AppHost's internal state.
 
 # Community Resources
 
-  - [Service discovery, load balancing and routing](http://www.wwwlicious.com/2016/05/11/servicestack-microservices-discovery-routing-3/) by [@wwwlicious](https://twitter.com/wwwlicious)
+  - [Service discovery, load balancing and routing](https://www.wwwlicious.com/servicestack-microservices-discovery-routing-3/) by [@wwwlicious](https://twitter.com/wwwlicious)
