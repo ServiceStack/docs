@@ -39,7 +39,7 @@ into the `UserLogin` POCO which it returns:
 
 ```csharp
 [Route("/useractivity/today")]
-public class QueryTodaysUserActivity : QueryData<User> {}
+public class QueryTodaysUserActivity : QueryData<UserLogin> {}
 
 public async Task<List<UserLogin>> Any(GetTodaysUserActivity request)
 {
