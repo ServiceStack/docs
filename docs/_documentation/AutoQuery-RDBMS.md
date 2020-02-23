@@ -98,7 +98,7 @@ public class MyQueryServices : Service
     public object Any(FindMovies query)
     {
         var q = AutoQuery.CreateQuery(query, Request);
-        return AutoQuery.Execute(query, q, Request);
+        return AutoQuery.Execute(query, q);
     }
 }
 ```
