@@ -317,14 +317,12 @@ public class AutofacIocAdapter : IContainerAdapter
 
     public T TryResolve<T>()
     {
-        T result;
+        if (container.TryResolve(typeof(T), out var result))
+	{
+	    return (T)result;
+	}
 
-        if (container.TryResolve<T>(out result))
-        {
-            return result;
-        }
-
-        return default(T);
+	return default;
     }
 }
 ```
