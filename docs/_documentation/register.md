@@ -12,7 +12,7 @@ There are multiple ways of registering your license key, all options only need t
 The easiest way to register your license key is in to copy the servicestack:license appSetting into your Web.config or App.config's <appSettings/> config section, e.g:
 
 ```xml
-<appSettings/>
+<appSettings>
     <add key="servicestack:license" value="{licenseKeyText}" />
 </appSettings>
 ```
