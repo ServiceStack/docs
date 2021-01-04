@@ -1283,20 +1283,20 @@ Registering an interface like `IFilterRockstars` is especially useful as it enab
 
 ## Intercept and Introspect Every Query
 
-As mentioned earlier AutoQuery works by auto-generating ServiceStack Services for each Request DTO marked with `IQuery` unless an custom implementation has been defined for that Query. It's also possible to change the base class for the generated services so that all queries executes your custom implementation instead.
+As mentioned earlier AutoQuery works by auto-generating ServiceStack Services for each Request DTO marked with `IQueryDb` unless a custom implementation has been defined for that Query. It's also possible to change the base class for the generated services so that all queries execute your custom implementation instead.
 
 To do this, create a custom Service that inherits from `AutoQueryServiceBase` and overrides both `Exec` methods with your own implementation, e.g:
 
 ```csharp
 public abstract class MyAutoQueryServiceBase : AutoQueryServiceBase
 {
-    public override object Exec<From>(IQuery<From> dto)
+    public override object Exec<From>(IQueryDb<From> dto)
     {
         var q = AutoQuery.CreateQuery(dto, Request.GetRequestParams(), base.Request);
         return AutoQuery.Execute(dto, q, base.Request);
     }
 
-    public override object Exec<From, Into>(IQuery<From, Into> dto)
+    public override object Exec<From, Into>(IQueryDb<From, Into> dto)
     {
         var q = AutoQuery.CreateQuery(dto, Request.GetRequestParams(), base.Request);
         return AutoQuery.Execute(dto, q, base.Request);
