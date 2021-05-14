@@ -224,7 +224,7 @@ More information on ServiceStack's built-in Fluent Validation support is describ
 ### [Authentication](/authentication-and-authorization)
 The Authentication Feature enables the [Authentication and Authorization](/authentication-and-authorization) support in ServiceStack. It makes available the AuthService at the default route at `/auth/{provider}`, registers **AssignRoles** and **UnAssignRoles** services (at `/assignroles` and `/unassignroles` default routes) and auto-enables Session support if it's not added already.
 
-An example AuthFeature registration (taken from the [SocialBootstrapApi](https://github.com/ServiceStack/SocialBootstrapApi/blob/master/src/SocialBootstrapApi/App_Start/AppHost.cs#L161) project):
+An example AuthFeature registration (taken from the [SocialBootstrapApi](https://github.com/ServiceStackApps/SocialBootstrapApi/blob/master/src/SocialBootstrapApi/AppHost.cs#L154) project):
 
 ```csharp
 Plugins.Add(new AuthFeature(
