@@ -886,7 +886,7 @@ public class QuerySales : QueryDb<Sales> {}
 
 AutoQuery supports running additional Aggregate queries on the queried result-set. To include aggregates in your Query's response specify them in the `Include` property of your AutoQuery Request DTO, e.g:
 
-    var response = client.Get(new Query Rockstars { Include = "COUNT(*)" })
+    var response = client.Get(new QueryRockstars { Include = "COUNT(*)" })
 
 Or in the `Include` QueryString param if you're calling AutoQuery Services from a browser, e.g:
 
