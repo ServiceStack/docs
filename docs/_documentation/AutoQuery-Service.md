@@ -15,7 +15,7 @@ and provide some examples of when you may want to use them below.
 
 ### Register Data Sources
 
-The `UserLogin` ServiceSouce shows you can just pass an empty Request DTO as-is to execute its Service. 
+The `UserLogin` ServiceSource shows you can just pass an empty Request DTO as-is to execute its Service. 
 The `RockstarAlbum` and `GithubRepo` Service Sources are however leveraging the built-in
 [Auto Mapping](/auto-mapping) to copy any matching 
 properties from the AutoQuery Request DTO to the downstream `GetRockstarAlbums` and `GetGithubRepos` 
