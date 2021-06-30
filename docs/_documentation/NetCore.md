@@ -883,19 +883,7 @@ public class Startup
 
 #### Scoped Dependencies
 
-In .NET Core ServiceStack is pre-configured to use a `NetCoreContainerAdapter` where it will also resolve any 
-dependencies declared in your .NET Core Startup using `app.ApplicationServices`. One side-effect of this is that 
-when resolving **Scoped** dependencies it resolves them in a Singleton scope instead of the Request Scope had 
-they instead been resolved from `context.RequestServices.GetService<T>()`. 
-
-If you need to resolve Request Scoped .NET Core dependencies you can resolve them from `IRequest`, e.g:
-
-```csharp
-public object Any(MyRequest request)
-{
-    var requestScope = base.Request.TryResolve<IScoped>();
-}
-```
+In .NET Core ServiceStack scoped dependencies will resolve as scoped to the HTTP context on a per request basis. Scoped dependencies can be added using the `IServiceCollection.AddScoped` method. If there is no `IHttpContextAccessor` registered with .NET Core built in IoC container, the `NetCoreContainerAdapter` will fallback to resolving **Scoped** dependencies in a Singleton scope instead. 
 
 Alternatively you can just register the dependencies in ServiceStack's IOC instead, e.g:
 
