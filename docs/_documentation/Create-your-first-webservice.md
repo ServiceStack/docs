@@ -218,7 +218,7 @@ Which will install the [init-vb Gist](https://gist.github.com/gistlyn/88f2792fc4
 Use `init-fsharp` to create a F# .NET Core App:
 
     $ mkdir ProjectName && cd ProjectName
-    $ x mix init-vb
+    $ x mix init-fsharp
     $ dotnet run
 
 Which will install the [init-fsharp Gist](https://gist.github.com/gistlyn/4802ba22b665e68c7257aef9f57c1934).
