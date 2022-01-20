@@ -67,7 +67,7 @@ model.PrintDump();
 ### Dump Table
 
 Whilst to quickly visualize tabular data, e.g. returned from [OrmLite](https://github.com/ServiceStack/ServiceStack.OrmLite) or an API Response
-you can use the `PrintDump()` extension method to return the results formatted in an easy to read Markdown table, e.g:
+you can use the `PrintDumpTable()` extension method to return the results formatted in an easy to read Markdown table, e.g:
 
 ```csharp
 public class GithubRepo
@@ -84,7 +84,7 @@ var orgRepos = "https://api.github.com/orgs/dotnet/repos"
     .OrderByDescending(x => x.Watchers)
     .Take(10);
 
-orgRepos.PrintDump();
+orgRepos.PrintDumpTable();
 ```
 
 Which will output:
