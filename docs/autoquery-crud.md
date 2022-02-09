@@ -482,10 +482,10 @@ public class CustomRockstarService : ICreateDb<Rockstar>, IReturn<RockstarWithId
 }
 ```
 
-Or you can ignore validation for all properties with the same name by registering it to `AutoQuery.IncludeCrudProperties`, e.g:
+Or you can ignore validation for all properties with the same name by registering it to `AutoQuery.IgnoreCrudProperties`, e.g:
 
 ```csharp
-AutoQuery.IncludeCrudProperties.Add(nameof(CustomInfo));
+AutoQuery.IgnoreCrudProperties.Add(nameof(CustomInfo));
 ```
 
 ### Apply Generic CRUD Behaviors
