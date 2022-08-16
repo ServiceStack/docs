@@ -1,0 +1,1 @@
+import{f as t,i as s,o as c,c as n,b as a}from"../app.debf38f2.js";const r={class:"custom theme"},i=["href"],h=t({props:{to:null},setup(e){const o=e;return s(()=>location.href=o.to),(l,d)=>(c(),n("div",r,[a("a",{href:e.to,"aria-label":"redirecting"},"direct link",8,i)]))}});export{h as _};
