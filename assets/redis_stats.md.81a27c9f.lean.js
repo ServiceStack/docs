@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a,a as s}from"./app.debf38f2.js";const f='{"title":"Redis Stats","description":"","frontmatter":{"slug":"stats","title":"Redis Stats"},"headers":[],"relativePath":"redis/stats.md"}',o={},r=s("",5),n=[r];function d(i,c,l,u,b,p){return a(),e("div",null,n)}var v=t(o,[["render",d]]);export{f as __pageData,v as default};
