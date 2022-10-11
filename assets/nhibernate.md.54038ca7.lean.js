@@ -1,0 +1,1 @@
+import{_ as e,c as r,o as t,a as n}from"./app.89265b4c.js";const b='{"title":"Community Resources","description":"","frontmatter":{"slug":"nhibernate"},"headers":[],"relativePath":"nhibernate.md"}',a={},i=n("",2),o=[i];function l(h,s,c,_,p,d){return t(),r("div",null,o)}var u=e(a,[["render",l]]);export{b as __pageData,u as default};
