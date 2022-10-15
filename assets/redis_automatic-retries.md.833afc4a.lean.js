@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as n,a as s}from"./app.da521a46.js";const m='{"title":"Automatic Retries","description":"","frontmatter":{"slug":"automatic-retries","title":"Automatic Retries"},"headers":[],"relativePath":"redis/automatic-retries.md"}',a={},o=s("",3),i=[o];function c(r,p,d,u,l,_){return n(),t("div",null,i)}var h=e(a,[["render",c]]);export{m as __pageData,h as default};
