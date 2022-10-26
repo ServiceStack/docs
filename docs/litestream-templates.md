@@ -50,6 +50,8 @@ services:
     entrypoint: ["/bin/sh", "-c"]
     # Timeout of health check will need to depend on size of db, and speed of network to host.
     healthcheck:
+      # There is a first use test needed to ensure virgin first deploy succeeds.
+      # test /usr/local/bin/litestream version
       test: /usr/local/bin/litestream restore -if-db-not-exists -if-replica-exists -o /data/app.db s3://${AWS_S3_BUCKET}/MyApp.sqlite
       timeout: 10m
       retries: 1
