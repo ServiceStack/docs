@@ -147,7 +147,6 @@ Use these attributes to customize the behavior of [AutoQuery CRUD APIs](/autoque
 | `[AutoMap]`      | Map System Input properties to Data Model fields                     |
 | `[AutoDefault]`  | Specify to fallback default values when not provided                 |
 | `[AutoIgnore]`   | Ignore mapping Request DTO property to Data Model                    |
-| `[AutoPopulate]` | Populate data models with generic user & system info                 |
 | `[AutoUpdate]`   | Change the update behavior to only update non-default values         |
 
 ### Type Validation Attributes
