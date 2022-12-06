@@ -1,1 +1,0 @@
-var s="/assets/litestream-how-it-works.10358e53.svg",t="/assets/litestream-costs.1531c793.svg",a="/assets/litestream-costs-perf.0d655d2c.svg",e="/assets/litestream-migrate.0df6f27d.svg",r="/assets/litestream-project-templates.cea4d0f0.png";export{s as _,t as a,a as b,e as c,r as d};
