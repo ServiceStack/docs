@@ -9,7 +9,7 @@ response<span class="token punctuation">.</span>PrintDump<span class="token punc
 </code></pre></div><h2 id="dto-customization-options" tabindex="-1">DTO Customization Options <a class="header-anchor" href="#dto-customization-options" aria-hidden="true">#</a></h2><p>The header comments in the generated DTO&#39;s allows for further customization of how they&#39;re generated where ServiceStackVS automatically watches for any file changes and updates the generated DTO&#39;s with any custom Options provided. Options that are preceded by a <a href="http://VB.Net" target="_blank" rel="noopener noreferrer">VB.Net</a> Class comment <code>&#39;&#39;&#39;</code> are defaults from the server that can be overridden, e.g:</p><div class="language-vb"><pre><code><span class="token comment">&#39; Options:</span>
 <span class="token comment">&#39;Date: 2014-10-21 00:45:05</span>
 <span class="token comment">&#39;Version: 1</span>
-<span class="token comment">&#39;BaseUrl: http://stackapis.netcore.io</span>
+<span class="token comment">&#39;BaseUrl: https://stackapis.netcore.io</span>
 <span class="token comment">&#39;</span>
 <span class="token comment">&#39;&#39;&#39;MakePartial: True</span>
 <span class="token comment">&#39;&#39;&#39;MakeVirtual: True</span>
@@ -26,7 +26,7 @@ response<span class="token punctuation">.</span>PrintDump<span class="token punc
 </code></pre></div><p>To override these options on the client, the comment has to be changed to start with a single <code>&#39;</code> instead of triple <code>&#39;&#39;&#39;</code>. This convention is due to <a href="http://VB.Net" target="_blank" rel="noopener noreferrer">VB.Net</a> not having block quotes. For example, if we did&#39;t want our classes to be partial by default for the <a href="http://VB.Net" target="_blank" rel="noopener noreferrer">VB.Net</a> client, our options would look like below.</p><div class="language-vb"><pre><code><span class="token comment">&#39; Options:</span>
 <span class="token comment">&#39;Date: 2014-10-21 00:45:05</span>
 <span class="token comment">&#39;Version: 1</span>
-<span class="token comment">&#39;BaseUrl: http://stackapis.netcore.io</span>
+<span class="token comment">&#39;BaseUrl: https://stackapis.netcore.io</span>
 <span class="token comment">&#39;</span>
 <span class="token comment">&#39;MakePartial: False</span>
 <span class="token comment">&#39;&#39;&#39;MakeVirtual: True</span>
