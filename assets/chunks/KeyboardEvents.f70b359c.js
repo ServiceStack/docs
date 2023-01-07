@@ -1,1 +1,0 @@
-import{_ as t,o,c as s}from"../app.98239e8f.js";const r={created(){const e=this;this.handler=function(n){e.$emit("keydown",n)},window.addEventListener("keydown",this.handler)},beforeDestroy(){window.removeEventListener("keydown",this.handler)}},d={class:"hidden"};function a(e,n,c,i,_,h){return o(),s("div",d)}var f=t(r,[["render",a]]);export{f as default};
