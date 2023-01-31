@@ -1,1 +1,0 @@
-import{_ as t,o as e,c as o}from"./app.bc89fa0e.js";const f='{"title":"Auto Form Components","description":"","frontmatter":{"title":"Auto Form Components"},"headers":[],"relativePath":"vue/gallery/autoform.md"}',r={};function a(n,s,c,m,p,_){return e(),o("div")}var l=t(r,[["render",a]]);export{f as __pageData,l as default};

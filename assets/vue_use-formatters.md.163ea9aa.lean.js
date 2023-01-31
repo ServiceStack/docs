@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as r}from"./app.bc89fa0e.js";const u='{"title":"useFormatters","description":"","frontmatter":{"title":"useFormatters"},"headers":[],"relativePath":"vue/use-formatters.md"}',a={};function s(o,c,n,_,i,m){return t(),r("div")}var d=e(a,[["render",s]]);export{u as __pageData,d as default};

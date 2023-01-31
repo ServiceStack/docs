@@ -1,0 +1,1 @@
+import{_ as t,o as e,c as a}from"./app.82363d70.js";const i='{"title":"Format Examples","description":"","frontmatter":{"title":"Format Examples"},"headers":[],"relativePath":"vue/gallery/formats.md"}',r={};function o(s,c,n,m,p,l){return e(),a("div")}var f=t(r,[["render",o]]);export{i as __pageData,f as default};
