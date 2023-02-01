@@ -1,0 +1,1 @@
+import{_ as t,o as e,c as a}from"./app.3d2ffb6e.js";const d='{"title":"Navigation Components","description":"","frontmatter":{"title":"Navigation Components"},"headers":[],"relativePath":"vue/gallery/navigation.md"}',o={};function n(r,i,s,c,p,_){return e(),a("div")}var m=t(o,[["render",n]]);export{d as __pageData,m as default};
