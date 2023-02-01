@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as r}from"./app.d4a1c013.js";const d='{"title":"Alert Components","description":"","frontmatter":{"title":"Alert Components"},"headers":[],"relativePath":"vue/gallery/alerts.md"}',a={};function o(s,n,c,l,p,_){return t(),r("div")}var m=e(a,[["render",o]]);export{d as __pageData,m as default};

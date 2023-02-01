@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as r}from"./app.892e7bed.js";const _='{"title":"AutoQueryGrid Component","description":"","frontmatter":{"title":"AutoQueryGrid Component"},"headers":[],"relativePath":"vue/gallery/autoquerygrid.md"}',o={};function a(n,c,i,s,u,d){return t(),r("div")}var l=e(o,[["render",a]]);export{_ as __pageData,l as default};
