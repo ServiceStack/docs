@@ -13,7 +13,7 @@ export function createApp(App, props) {
     
     const { clear, load } = useAppMetadata()
     clear({ olderThan: 24 * 60 * 60 * 1000 })
-    load({ resolve:() => fetch('/gallery/metadata.json') })
+    load(null, { resolve:() => fetch('/gallery/metadata.json') })
     
     return app
 }
