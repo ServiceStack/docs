@@ -739,3 +739,25 @@ p code {
 .svg-external:hover {
     text-decoration: underline;
 }
+
+.content :where(a):not(:where([class~="not-prose"] *)) { color: var(--c-brand); }
+.content :where(strong):not(:where([class~="not-prose"] *)) { font-weight: 600 }
+.content :where(p):not(:where([class~="not-prose"] *)) { 
+  /* text-lg */
+  font-size: 1.125rem; 
+  line-height: 1.75rem;
+  padding: .5em 0;
+}
+.content :where(ul):not(:where([class~="not-prose"] *)) { 
+  list-style-type: disc;
+  padding-left: 1.625em;
+}
+
+.not-prose a.text-blue-600 { color: rgb(37 99 235) }
+.not-prose a.text-blue-600 { color: rgb(37 99 235) }
+.not-prose a.text-purple-600 { color: rgb(147 51 234) }
+.not-prose a.text-red-700 { color: rgb(185 28 28) }
+.not-prose a.text-green-600 { color: rgb(22 163 74) }
+.not-prose a.text-sky-600 { color: rgb(2 132 199) }
+.not-prose a.text-cyan-600 { color: rgb(8 145 178) }
+.not-prose a.text-indigo-600 { color: rgb(79 70 229) }

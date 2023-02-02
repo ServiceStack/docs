@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as s}from"./app.5c693fe4.js";const u='{"title":"useUtils","description":"","frontmatter":{"title":"useUtils"},"headers":[],"relativePath":"vue/use-utils.md"}',a={};function r(o,c,i,n,l,_){return t(),s("div")}var d=e(a,[["render",r]]);export{u as __pageData,d as default};
