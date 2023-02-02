@@ -11,9 +11,11 @@ export function createApp(App, props) {
     app.provide('client', client)
     app.use(ServiceStackVue)
     
-    const { clear, load } = useAppMetadata()
-    clear({ olderThan: 24 * 60 * 60 * 1000 })
-    load(null, { resolve:() => fetch('/gallery/metadata.json') })
+    const { loadMetadata } = useAppMetadata()
+    loadMetadata({ 
+        olderThan: 24 * 60 * 60 * 1000, //1day
+        resolvePath: '/gallery/metadata.json'
+    })
     
     return app
 }
