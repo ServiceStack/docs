@@ -711,7 +711,7 @@ tr.bg-indigo-100 {  /*revert tr:nth-child(2n)*/
 tr {
     border-top: none
 }
-tr:nth-child(2n).bg-white {
+tr:nth-child(2n).bg-white, .w-full tr:nth-child(2n) {
     background-color: #fff;
 }
 input.rounded-md {

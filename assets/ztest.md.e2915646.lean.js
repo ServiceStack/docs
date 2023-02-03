@@ -1,1 +1,0 @@
-import{_ as t,o as e,c as s}from"./app.16c21027.js";const l='{"title":"ztest","description":"","frontmatter":{"slug":"ztest","title":"ztest"},"headers":[],"relativePath":"ztest.md"}',a={};function r(o,c,n,_,i,p){return e(),s("div")}var f=t(a,[["render",r]]);export{l as __pageData,f as default};
