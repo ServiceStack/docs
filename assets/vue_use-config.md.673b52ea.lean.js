@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as o}from"./app.eaeca928.js";const u='{"title":"useConfig","description":"","frontmatter":{"title":"useConfig"},"headers":[],"relativePath":"vue/use-config.md"}',a={};function r(s,n,c,i,f,_){return t(),o("div")}var d=e(a,[["render",r]]);export{u as __pageData,d as default};
