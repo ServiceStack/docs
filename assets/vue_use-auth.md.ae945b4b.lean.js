@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./app.5c693fe4.js";const d='{"title":"useAuth","description":"","frontmatter":{"title":"useAuth"},"headers":[],"relativePath":"vue/use-auth.md"}',r={};function s(o,c,n,u,_,i){return t(),a("div")}var f=e(r,[["render",s]]);export{d as __pageData,f as default};
