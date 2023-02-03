@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as s}from"./app.16c21027.js";const u='{"title":"useFiles","description":"","frontmatter":{"title":"useFiles"},"headers":[],"relativePath":"vue/use-files.md"}',a={};function r(o,c,i,n,l,_){return t(),s("div")}var d=e(a,[["render",r]]);export{u as __pageData,d as default};
