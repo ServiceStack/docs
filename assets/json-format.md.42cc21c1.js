@@ -182,7 +182,7 @@ JsConfig<span class="token punctuation">.</span>AllowRuntimeTypeInTypesWithNames
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
  
 <span class="token comment">// Allow object in ServiceStack.Messaging MQ and Request Logging payloads</span>
-JsConfig<span class="token punctuation">.</span>AllowRuntimeTypeInTypesWithNamespaces <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">HashSet<span class="token punctuation">&lt;</span><span class="token keyword">string</span><span class="token punctuation">&gt;</span></span>
+JsConfig<span class="token punctuation">.</span>AllowRuntimeTypeInTypes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">HashSet<span class="token punctuation">&lt;</span><span class="token keyword">string</span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">{</span>
     <span class="token string">&quot;ServiceStack.Messaging.Message&quot;</span><span class="token punctuation">,</span>
     <span class="token string">&quot;ServiceStack.RequestLogEntry&quot;</span><span class="token punctuation">,</span>
