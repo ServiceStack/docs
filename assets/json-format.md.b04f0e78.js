@@ -158,8 +158,9 @@ JsConfig<span class="token operator">&lt;</span>TimeSpan<span class="token opera
 </code></pre></div><h3 id="runtime-type-whitelist" tabindex="-1">Runtime Type Whitelist <a class="header-anchor" href="#runtime-type-whitelist" aria-hidden="true">#</a></h3><p>ServiceStack only allows you to serialize &quot;known safe Types&quot; in late-bound properties which uses a whitelist that&#39;s pre-populated with a safe-list of popular Data Types, DTOs and Request DTOs with the default configuration below:</p><div class="language-csharp"><pre><code><span class="token comment">// Allow deserializing types with [DataContract] or [RuntimeSerializable] attributes</span>
 JsConfig<span class="token punctuation">.</span>AllowRuntimeTypeWithAttributesNamed <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">HashSet<span class="token punctuation">&lt;</span><span class="token keyword">string</span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">{</span>
+    <span class="token keyword">nameof</span><span class="token punctuation">(</span>SerializableAttribute<span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token keyword">nameof</span><span class="token punctuation">(</span>DataContractAttribute<span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">nameof</span><span class="token punctuation">(</span>RuntimeSerializableAttribute<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// new in ServiceStack.Text</span>
+    <span class="token keyword">nameof</span><span class="token punctuation">(</span>RuntimeSerializableAttribute<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// in ServiceStack.Text</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
  
 <span class="token comment">// Allow deserializing types implementing any of the interfaces below</span>
@@ -167,7 +168,7 @@ JsConfig<span class="token punctuation">.</span>AllowRuntimeTypeWithInterfacesNa
 <span class="token punctuation">{</span>
     <span class="token string">&quot;IConvertible&quot;</span><span class="token punctuation">,</span>
     <span class="token string">&quot;ISerializable&quot;</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;IRuntimeSerializable&quot;</span><span class="token punctuation">,</span> <span class="token comment">// new in ServiceStack.Text</span>
+    <span class="token string">&quot;IRuntimeSerializable&quot;</span><span class="token punctuation">,</span> <span class="token comment">// in ServiceStack.Text</span>
     <span class="token string">&quot;IMeta&quot;</span><span class="token punctuation">,</span>
     <span class="token string">&quot;IReturn\`1&quot;</span><span class="token punctuation">,</span>
     <span class="token string">&quot;IReturnVoid&quot;</span><span class="token punctuation">,</span>
@@ -176,7 +177,15 @@ JsConfig<span class="token punctuation">.</span>AllowRuntimeTypeWithInterfacesNa
 <span class="token comment">// Allow object property in ServiceStack.Messaging MQ classes</span>
 JsConfig<span class="token punctuation">.</span>AllowRuntimeTypeInTypesWithNamespaces <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">HashSet<span class="token punctuation">&lt;</span><span class="token keyword">string</span><span class="token punctuation">&gt;</span></span>
 <span class="token punctuation">{</span>
+    <span class="token string">&quot;ServiceStack.Auth&quot;</span><span class="token punctuation">,</span>
     <span class="token string">&quot;ServiceStack.Messaging&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+ 
+<span class="token comment">// Allow object in ServiceStack.Messaging MQ and Request Logging payloads</span>
+JsConfig<span class="token punctuation">.</span>AllowRuntimeTypeInTypesWithNamespaces <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">HashSet<span class="token punctuation">&lt;</span><span class="token keyword">string</span><span class="token punctuation">&gt;</span></span>
+<span class="token punctuation">{</span>
+    <span class="token string">&quot;ServiceStack.Messaging.Message&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;ServiceStack.RequestLogEntry&quot;</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre></div><p>The above rules can be extended to allow your own conventions. If you just need to allow a specific Type you can instead just implement:</p><div class="language-csharp"><pre><code>JsConfig<span class="token punctuation">.</span>AllowRuntimeType <span class="token operator">=</span> type <span class="token operator">=&gt;</span> type <span class="token operator">==</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">MyType</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div><p>If you\u2019re in a trusted intranet environment this can also be used to disable the whitelist completely by allowing all Types to be deserialized into object properties with:</p><div class="language-csharp"><pre><code>JsConfig<span class="token punctuation">.</span>AllowRuntimeType <span class="token operator">=</span> _ <span class="token operator">=&gt;</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
