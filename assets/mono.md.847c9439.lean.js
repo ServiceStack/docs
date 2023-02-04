@@ -1,0 +1,1 @@
+import{_ as e,o as r,c as t,a as o}from"./app.0b863c35.js";const u='{"title":"StackOverflow","description":"","frontmatter":{"slug":"mono"},"headers":[{"level":3,"title":"StackOverflow","slug":"stackoverflow"}],"relativePath":"mono.md"}',n={},a=o("",7),i=[a];function l(c,s,h,p,f,m){return r(),t("div",null,i)}var g=e(n,[["render",l]]);export{u as __pageData,g as default};
