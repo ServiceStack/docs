@@ -1,1 +1,0 @@
-import{_ as n,o as a,c as s,a as t}from"./app.0b863c35.js";const y='{"title":"Anti Forgery","description":"","frontmatter":{"title":"Anti Forgery","slug":"anti-forgery"},"headers":[],"relativePath":"auth-anti-forgery.md"}',p={},e=t("",5),o=[e];function c(l,u,r,i,k,g){return a(),s("div",null,o)}var m=n(p,[["render",c]]);export{y as __pageData,m as default};
