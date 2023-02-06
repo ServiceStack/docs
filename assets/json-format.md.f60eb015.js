@@ -180,14 +180,11 @@ JsConfig<span class="token punctuation">.</span>AllowRuntimeTypeInTypesWithNames
     <span class="token string">&quot;ServiceStack.Auth&quot;</span><span class="token punctuation">,</span>
     <span class="token string">&quot;ServiceStack.Messaging&quot;</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
- 
-<span class="token comment">// Allow object in ServiceStack.Messaging MQ and Request Logging payloads</span>
-JsConfig<span class="token punctuation">.</span>AllowRuntimeTypeInTypes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">HashSet<span class="token punctuation">&lt;</span><span class="token keyword">string</span><span class="token punctuation">&gt;</span></span>
-<span class="token punctuation">{</span>
-    <span class="token string">&quot;ServiceStack.Messaging.Message&quot;</span><span class="token punctuation">,</span>
-    <span class="token string">&quot;ServiceStack.RequestLogEntry&quot;</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre></div><p>The above rules can be extended to allow your own conventions. If you just need to allow a specific Type you can instead just implement:</p><div class="language-csharp"><pre><code>JsConfig<span class="token punctuation">.</span>AllowRuntimeType <span class="token operator">=</span> type <span class="token operator">=&gt;</span> type <span class="token operator">==</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">MyType</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+The above rules can be extended to allow your own conventions<span class="token punctuation">.</span> If you just need to allow a specific Type you can instead <span class="token class-name">just</span> implement<span class="token punctuation">:</span>
+
+\`\`\`csharp
+JsConfig<span class="token punctuation">.</span>AllowRuntimeType <span class="token operator">=</span> type <span class="token operator">=&gt;</span> type <span class="token operator">==</span> <span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token type-expression class-name">MyType</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div><p>If you\u2019re in a trusted intranet environment this can also be used to disable the whitelist completely by allowing all Types to be deserialized into object properties with:</p><div class="language-csharp"><pre><code>JsConfig<span class="token punctuation">.</span>AllowRuntimeType <span class="token operator">=</span> _ <span class="token operator">=&gt;</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 </code></pre></div><h3 id="custom-enum-serialization" tabindex="-1">Custom Enum Serialization <a class="header-anchor" href="#custom-enum-serialization" aria-hidden="true">#</a></h3><p>You can use <code>[EnumMember]</code> to change what Enum value gets serialized, e.g:</p><div class="language-csharp"><pre><code><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">DataContract</span></span><span class="token punctuation">]</span>
 <span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">Day</span>
@@ -218,4 +215,4 @@ JsConfig<span class="token punctuation">.</span>AllowRuntimeTypeInTypes <span cl
 
 <span class="token class-name"><span class="token keyword">var</span></span> fromDto <span class="token operator">=</span> json<span class="token punctuation">.</span><span class="token generic-method"><span class="token function">FromJson</span><span class="token generic class-name"><span class="token punctuation">&lt;</span>EnumMemberDto<span class="token punctuation">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 fromDto<span class="token punctuation">.</span>Day               <span class="token comment">//= Day.Sunday</span>
-</code></pre></div>`,135),h=[c,i,l,r,u,k,d];function g(m,y,f,v,b,S){return t(),e("div",null,h)}var x=a(o,[["render",g]]);export{T as __pageData,x as default};
+</code></pre></div>`,133),h=[c,i,l,r,u,k,d];function g(m,y,f,v,b,S){return t(),e("div",null,h)}var x=a(o,[["render",g]]);export{T as __pageData,x as default};
