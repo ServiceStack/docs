@@ -95,7 +95,9 @@ Reset links to optimize for opt-in styling instead of opt-out.
 Add the correct font weight in Edge and Safari.
 */
 
-.not-prose b,
+.not-prose b {
+  font-weight: 600;
+}
 .not-prose strong {
   font-weight: bolder;
 }
