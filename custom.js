@@ -23,3 +23,21 @@ function copy(e) {
     document.body.removeChild($el)
     setTimeout(() => e.classList.remove('copying'), 3000)
 }
+
+function onload() {
+    removeDuplicates()
+}
+
+function removeDuplicates() {
+    let els = Array.from(document.querySelectorAll('[data-id]'))
+    new Set(els.map(x => x.attributes['data-id'].value)).forEach(id => {
+        let copies = els.filter(el => el.attributes['data-id'].value == id)
+        copies.slice(1).forEach(el => {
+            console.log(`removing duplicate ${id}`)
+            el.remove()            
+        })
+    })
+}
+
+document.addEventListener('DOMContentLoaded', onload, false)
+window.addEventListener('load', onload, false)

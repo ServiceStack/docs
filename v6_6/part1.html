@@ -1,0 +1,107 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/gallery/styles.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "vue":                  "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js",
+            "@servicestack/client": "https://unpkg.com/@servicestack/client@2/dist/servicestack-client.min.mjs",
+            "@servicestack/vue":    "https://unpkg.com/@servicestack/vue@3/dist/servicestack-vue.min.mjs"
+        }
+    }
+    </script>
+</head>
+<body>
+
+<div class="language-js"><pre><code><span class="token keyword">const</span> Hello <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;b&gt;Hello, {{name}}!&lt;/b&gt;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span>String <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div>
+
+<div class="text-center"><div data-component="Hello" data-props="{ name:'Vue 3' }" class="text-2xl py-4"></div></div>
+
+<div class="text-center"><div data-component="Counter" class="text-2xl py-4 select-none cursor-pointer"></div></div>
+
+<div class="text-center"><div data-component="Plugin" class="text-2xl py-4"></div></div>
+
+
+<script type="module">
+import { createApp, ref } from "vue"
+import { JsonApiClient, $$ } from "@servicestack/client"
+import ServiceStackVue, { useMetadata } from "@servicestack/vue"
+
+const { loadMetadata } = useMetadata()
+
+const Hello = {
+    template: `<b>Hello, {{name}}!</b>`,
+    props: { name:String }
+}
+const Counter = {
+    template: `<b @click="count++">Counter {{count}}</b>`,
+    setup() {
+        let count = ref(1)
+        return { count }
+    }
+}
+const Plugin = {
+    template:`<div>
+        <PrimaryButton @click="show=true">Open Modal</PrimaryButton>
+        <ModalDialog v-if="show" @done="show=false">
+            <div class="p-8">Hello @servicestack/vue!</div>
+        </ModalDialog>
+    </div>`,
+    setup() {
+        const show = ref(false)
+        return { show }
+    }
+}
+
+const Components = {
+    Hello,
+    Counter,
+    Plugin,
+}
+
+function mount(el, App, props) {   
+    const client = JsonApiClient.create('https://blazor-gallery-api.jamstacks.net/')
+    
+    const app = createApp(App)
+    app.provide('client', client)
+    Object.keys(Components || {}).forEach(name => {
+        app.component(name, Components[name])
+    })
+    app.use(ServiceStackVue)
+    
+    const { loadMetadata } = useMetadata()
+    loadMetadata({ 
+        olderThan: 24 * 60 * 60 * 1000, //1day
+        resolvePath: '/gallery/metadata.json'
+    })        
+    app.mount(el)
+    return app
+}
+
+function mountAll() {
+    $$('[data-component]').forEach(el => {
+        let componentName = el.getAttribute('data-component')
+        if (!componentName) return
+        let component = Components[componentName] || ServiceStackVue.component(componentName)
+        console.log(`mounting ${componentName}`, component)
+        if (!component) {
+            console.error(`Could not create component ${componentName}`)
+            return
+        }
+
+        let propsStr = el.getAttribute('data-props')
+        let props = propsStr && new Function(`return (${propsStr})`)() || {}
+        mount(el, component, props)
+    })
+}
+mountAll()
+
+</script>    
+</body>
+</html>
