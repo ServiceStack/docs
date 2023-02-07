@@ -175,6 +175,7 @@ JsConfig<span class="token punctuation">.</span>AllowRuntimeTypeWithInterfacesNa
     <span class="token string">&quot;ICrud&quot;</span><span class="token punctuation">,</span>                <span class="token comment">// ICreateDb&lt;T&gt;, IUpdateDb&lt;T&gt;, etc</span>
     <span class="token string">&quot;IMeta&quot;</span><span class="token punctuation">,</span>
     <span class="token string">&quot;IAuthTokens&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;IHasResponseStatus&quot;</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
  
 <span class="token comment">// Allow object property in ServiceStack.Messaging MQ classes</span>
