@@ -26,6 +26,7 @@ function copy(e) {
 
 function onload() {
     removeDuplicates()
+    processInstructions()
 }
 
 function removeDuplicates() {
@@ -35,6 +36,16 @@ function removeDuplicates() {
         copies.slice(1).forEach(el => {
             console.log(`removing duplicate ${id}`)
             el.remove()            
+        })
+    })
+}
+
+function processInstructions() {
+    let hideEls = Array.from(document.querySelectorAll('[data-hide]'))
+    hideEls.forEach(el => {
+        let hideSel = el.attributes['data-hide'].value
+        document.querySelectorAll(hideSel).forEach(el => {
+            el.classList.add('hidden')
         })
     })
 }
