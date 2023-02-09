@@ -1,0 +1,1 @@
+import{f as o,o as a,c as n,d as s,p as r,B as c,b as l,A as m}from"../app.0763af25.js";const p={class:"mt-8 mb-4 text-2xl font-semibold text-gray-900 dark:text-gray-50 flex justify-between"},f=o({__name:"ApiReference",props:{component:null},setup(e){return(t,d)=>(a(),n("h2",p,[s("div",null,[r(t.$slots,"default",{},()=>[l(m(e.component),1)])]),c("",!0)]))}});export{f as _};
