@@ -173,6 +173,7 @@ textarea {
   color: inherit; /* 1 */
   margin: 0; /* 2 */
   padding: 0; /* 3 */
+  background-color: initial;
 }
 
 /*
