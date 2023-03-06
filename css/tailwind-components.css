@@ -762,3 +762,5 @@ p code {
 .not-prose a.text-sky-600 { color: rgb(2 132 199) }
 .not-prose a.text-cyan-600 { color: rgb(8 145 178) }
 .not-prose a.text-indigo-600 { color: rgb(79 70 229) }
+
+.not-prose ul li { border:transparent } /*TagInput allowableValues*/
