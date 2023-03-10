@@ -7,7 +7,10 @@ import{_ as s,o as n,c as a,a as e}from"./app.f226abaa.js";const m=`{"title":"SO
 
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GetCustomersResponse</span>
 <span class="token punctuation">{</span>
+    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">DataMember</span></span><span class="token punctuation">]</span>
     <span class="token keyword">public</span> <span class="token return-type class-name">List<span class="token punctuation">&lt;</span>Customer<span class="token punctuation">&gt;</span></span> Results <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+
+    <span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">DataMember</span></span><span class="token punctuation">]</span>
     <span class="token keyword">public</span> <span class="token return-type class-name">ResponseStatus</span> ResponseStatus <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 
