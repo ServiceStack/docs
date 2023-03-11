@@ -1,1 +1,0 @@
-import{_ as t,o as e,c as o,a as r}from"./app.f226abaa.js";const d='{"title":"","description":"","frontmatter":{"slug":"how-to-contribute"},"headers":[],"relativePath":"how-to-contribute.md"}',s={},n=r("",2),a=[n];function i(l,c,g,_,u,p){return e(),o("div",null,a)}var f=t(s,[["render",i]]);export{d as __pageData,f as default};
