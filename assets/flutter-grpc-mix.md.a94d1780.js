@@ -1,0 +1,1 @@
+import{_ as t,o as e,c as r}from"./app.bf02e2f8.js";const f='{"title":"Flutter gRPC Mix Template","description":"","frontmatter":{"slug":"flutter-mix-grpc","title":"Flutter gRPC Mix Template"},"headers":[],"relativePath":"flutter-grpc-mix.md"}',a={};function c(o,i,l,p,s,n){return e(),r("div")}var m=t(a,[["render",c]]);export{f as __pageData,m as default};
