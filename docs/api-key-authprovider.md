@@ -348,7 +348,6 @@ public class ConfigureAuth : IHostingStartup
                 .Where(x => userWithKeysIds.Count == 0 || !userWithKeysIds.Contains(x.Id))
                 .Select(x => x.Id));
 
-            var authRepo = (IManageApiKeys)appHost.TryResolve<IAuthRepository>();
             foreach (var userId in userIdsMissingKeys)
             {
                 var apiKeys = authProvider.GenerateNewApiKeys(userId);
