@@ -381,7 +381,6 @@ container<span class="token punctuation">.</span><span class="token generic-meth
         <span class="token keyword">return</span> <span class="token keyword">await</span> service<span class="token punctuation">.</span><span class="token function">PostAsync</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token constructor-invocation class-name">Authenticate</span> <span class="token punctuation">{</span>
             provider <span class="token operator">=</span> AuthenticateService<span class="token punctuation">.</span>CredentialsProvider<span class="token punctuation">,</span>
             UserName <span class="token operator">=</span> request<span class="token punctuation">.</span>UserName<span class="token punctuation">,</span>
-            UseTokenCookie <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// if using JWT</span>
         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
