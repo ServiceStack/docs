@@ -285,6 +285,10 @@ Which AutoQueryGrid uses to automatically display the Job and Contact name inste
 
 With the original ids are discoverable by hovering over the Job & Contact labels. 
 
+<h2 id="reference-fields" class="pt-8 mb-4 text-2xl font-semibold text-gray-900 dark:text-gray-100">
+  Reference Fields
+</h2>
+
 By default AutoQuery will infer using the first string column of the related table for its label, this information can also be explicitly defined
 with the `[Ref]` attribute, e.g:
 

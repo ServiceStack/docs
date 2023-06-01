@@ -243,3 +243,44 @@ The mapping also includes a fallback for referencing fully-qualified names in th
 - `OrderId` => **"Order"."Id"**
 - `CustomerName` => **"Customer"."Name"**
 - `OrderCost` => **"Order"."Cost"**
+
+
+### SELECT JOIN examples
+
+You can SELECT all fields for a table by returning the entire instance in the custom anonymous type, e.g:
+
+```csharp
+var q = db.From<Table>()
+    .Join<JoinedTable>()
+    .OrderBy(x => x.Id)
+    .Select<Table, JoinedTable>((a, b) => new { a, b.TableId });
+
+var rows = db.Select<CombinedResult>(q);
+```
+
+Which selects all columns from the primary `Table` as well as `TableId` from `JoinedTable`.
+
+You can also specify SQL Aliases for ambiguous columns using anonymous properties, e.g:
+
+```csharp
+var q = db.From<Table>()
+    .Join<JoinedTable>()
+    .Select<Table, JoinedTable>((a, b) => new { a, JoinId = b.Id, JoinName = b.Name });
+```
+
+Which is roughly equivalent to:
+
+    SELECT a.*, b.Id AS JoinId, b.Name AS JoinName
+
+Where it selects all columns from the primary `Table` as well as `Id` and `Name` columns from `JoinedTable,` 
+returning them in the `JoinId` and `JoinName` custom aliases.
+
+Being able to select all columns works in other areas as well, e.g. you can **GROUP BY** all columns of 
+a table with:
+
+```csharp
+var q = db.From<Table>()
+    .GroupBy(x => new { x });
+```
+
+Which would return the same results as a **SELECT DISTINCT** on all columns of `Table`.
