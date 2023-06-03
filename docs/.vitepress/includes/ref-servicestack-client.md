@@ -70,7 +70,7 @@ function callHello(name) {
 </script>
 ```
 
-Which utilizes the [ES3 JavaScript Add ServiceStack Reference](//commonjs-add-servicestack-reference) **/types/js** to instantly generate JavaScript Types for all your APIs DTOs which can immediately be used with the [TypeScript JsonServiceClient](/typescript-add-servicestack-reference#typescript-serviceclient) to make Typed API requests.
+Which utilizes the [ES3 JavaScript Add ServiceStack Reference](/commonjs-add-servicestack-reference) **/types/js** to instantly generate JavaScript Types for all your APIs DTOs which can immediately be used with the [TypeScript JsonServiceClient](/typescript-add-servicestack-reference#typescript-serviceclient) to make Typed API requests.
 
 ### CDN unpkg
 
