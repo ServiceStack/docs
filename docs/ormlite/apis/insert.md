@@ -96,12 +96,14 @@ row.Id = (int) db.Insert<Person>(obj, selectIdentity:true);
 OrmLite provides a couple of different ways to handle Inserting records with AutoIncrementing Ids:
 
 ```csharp
-var autoId = db.Insert(new Track { Name = "Everything's Ruined", Album = "Angel Dust", Year = 1992 });
+var autoId = db.Insert(new Track { 
+    Name = "Everything's Ruined", Album = "Angel Dust", Year = 1992 
+}, selectIdentity:true);
 
 var track = db.SingleById<Track>(autoId);
 
 var savedTrack = new Track { Name = "Ashes to Ashes", Album = "Album of the Year", Year = 1997 };
-db.Save(savedTrack);
+db.Save(savedTrack); // Populates savedTrack.Id
 
 $"\nSaved AutoIncrement Id: {savedTrack.Id}".Print();
 $"\nSaved Track: {savedTrack.Dump()}".Print();
