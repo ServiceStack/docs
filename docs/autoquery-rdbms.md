@@ -497,6 +497,9 @@ ImplicitConventions = new Dictionary<string, string>
     {"%In",             "{Field} IN ({Values})"},
     {"%Ids",            "{Field} IN ({Values})"},
     {"%Between%",       "{Field} BETWEEN {Value1} AND {Value2}"},
+
+    {"%HasAll",         "{Value} & {Field} = {Value}"},
+    {"%HasAny",         "{Value} & {Field} > 0"},
             
     {"%IsNull",         IsNull},
     {"%IsNotNull",      IsNotNull},
