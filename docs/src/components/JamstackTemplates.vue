@@ -13,6 +13,22 @@
          <h3 class="text-gray-400 text-xl mb-2">SSG Templates</h3>
          <div class="flex flex-wrap justify-center">
             <div>
+               <a class="archive-url hover:no-underline netcoretemplates_vue-vite" :href="zipUrl('NetCoreTemplates/razor-ssg')">
+                  <div class="bg-white dark:bg-gray-800 px-4 py-4 mr-4 mb-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl dark:border-2 dark:border-pink-600 dark:hover:border-blue-600" style="min-width:150px">
+                     <div class="text-center font-extrabold flex items-center justify-center mb-2">
+                        <div class="text-4xl text-blue-400 my-3">
+                           <Icon icon="vscode-icons:file-type-razor" class="w-14 h-14 text-indigo-600" />
+                        </div>
+                     </div>
+                     <div class="text-xl font-medium text-gray-700">Razor SSG</div>
+                     <div class="flex justify-center h-8"></div>
+                     <span class="archive-name px-4 pb-2 text-blue-600 dark:text-indigo-400">{{ projectZip }}</span>
+                     <div class="count mt-1 text-gray-400 text-sm"></div>
+                  </div>
+               </a>
+               <a class="text-sm text-center mr-4" href="https://razor-ssg.web-templates.io">razor-ssg.web-templates.io</a>
+            </div>
+            <div>
                <a class="archive-url hover:no-underline netcoretemplates_web" :href="zipUrl('NetCoreTemplates/nextjs')">
                   <div class="bg-white dark:bg-gray-800 px-4 py-4 mr-4 mb-4 rounded-lg shadow-lg text-center items-center justify-center hover:shadow-2xl dark:border-2 dark:border-pink-600 dark:hover:border-blue-600" style="min-width:150px">
                      <div class="text-center font-extrabold flex items-center justify-center mb-2">

@@ -86,6 +86,14 @@ The [Blazor WebAssembly (WASM)](/templates-blazor) template offers a pure end-to
 
 <iframe width="980" height="551" src="https://www.youtube.com/embed/TIgjMf_vtCI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+### Razor SSG
+
+The [razor-ssg](https://razor-ssg.web-templates.io/posts/razor-ssg) ServiceStack template leverages the power of .NET Razor to provide seamless static site generation (SSG) capabilities. It's perfect for building content-rich applications like product websites, blogs, portfolios, and more. 
+
+This template streamlines the development process while offering versatility in customizing and extending your project. With GitHub Codespaces integration, you can develop, test, and manage your application all within your browser, eliminating the need for a dedicated development environment and expediting your workflow.
+
+<iframe width="980" height="551" src="https://www.youtube.com/embed/MRQMBrXi5Sc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ### Next.js
 
 For those preferring working with **React**, there's a clear choice in Nextjs.org - currently the flagship & [most popular Jamstack](https://jamstack.org/generators/) framework backed by the folks over at [Vercel](https://vercel.com), where it enjoys deep engineering talent committed to maintaining and continually improving it, so you can be confident in the longevity of the technology and the React framework maintained by [Meta](https://meta.com) (Facebook).
