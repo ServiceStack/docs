@@ -1,5 +1,5 @@
 ---
-title: Formatting Functions andMethods
+title: Formatting Functions and Methods
 ---
 
 <link rel="stylesheet" href="/css/tailwind-components.css">
