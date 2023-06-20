@@ -418,11 +418,11 @@ A Redis sorted set is similar to a regular set, but each value is associated wit
 var redis = redisManager.GetClient();
 
 // Works with TypedClients as well.
-var typedClient = redis.As<Hello>();
+var typedClient = redis.As<MyClass>();
 
 // Add new elements to a Redis sorted set
-typedClient.SortedSets["urn:mysortedset"].Add(new Hello(), 1);
-typedClient.SortedSets["urn:mysortedset"].Add(new Hello(), 2);
+typedClient.SortedSets["urn:mysortedset"].Add(new MyClass(), 1);
+typedClient.SortedSets["urn:mysortedset"].Add(new MyClass(), 2);
 
 // Fetch all elements in the sorted set
 var mySortedSet = typedClient.SortedSets["urn:mysortedset"].GetAll();
@@ -438,4 +438,4 @@ With Redis, we have at our disposal a high-performance, feature-rich in-memory d
 
 On the other hand, ServiceStack.Redis bridges the gap between the .NET ecosystem and Redis. Its ability to leverage .NET's async/await syntax, work with complex POCO objects, manage connections efficiently, and provide an idiomatic interface to Redis's data structures, truly makes it a powerful tool for any .NET developer looking to utilize Redis.
 
-If you have suggestions, corrections, or ideas to improve this content, please do share them. Your insights will help us refine this tutorial and better serve readers like you.
+If you have suggestions, corrections, or ideas to improve this content, please do share them. Your insights will help us refine this tutorial and better serve readers like you. You can reach out to us via Discord, GitHub Discussions or our Customer Forums.
