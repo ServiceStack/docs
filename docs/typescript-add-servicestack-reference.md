@@ -15,12 +15,6 @@ ServiceStack's **Add ServiceStack Reference** feature allows clients to generate
 
 <RefServiceClient />
 
-## React Native JsonServiceClient
-
-React Native Android JavaScript Example using VS Code
-
-<iframe class="video-hd" src="https://www.youtube.com/embed/T3KTDPdovOw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 ### First class development experience
 
 [TypeScript](https://www.typescriptlang.org/) has become a core part of our overall recommended solution 
@@ -88,20 +82,6 @@ Here are direct links to the 2 primary API Clients:
 
  - [JsonServiceClient](https://github.com/ServiceStack/servicestack-client/blob/4d17350f77c6461965f3bf0a5451a4e60e35f992/src/index.d.ts#L288)
  - [ServerEventsClient](https://github.com/ServiceStack/servicestack-client/blob/4d17350f77c6461965f3bf0a5451a4e60e35f992/src/index.d.ts#L167)
-
-#### Enabling TypeScript async/await 
-
-To make API requests using TypeScript's async/await feature you'll need to create a TypeScript `tsconfig.json` config file that imports ES6 promises and W3C fetch definitions with:
-
-```json
-{
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "lib": [ "es2015", "dom" ]
-  }
-}
-```
 
 ### TypeScript Ambient Interface Definitions or Concrete Types
 
@@ -885,6 +865,12 @@ import { Symbol } from "module";
 import { Zip } from "./ZipValidator";
 ```
 
+## React Native JsonServiceClient
+
+React Native Android JavaScript Example using VS Code:
+
+<iframe class="video-hd" src="https://www.youtube.com/embed/T3KTDPdovOw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## TypeScript Interface Definitions
 
 By checking **Only TypeScript Definitions** check-box on the dialog when Adding a TypeScript Reference
@@ -1063,3 +1049,21 @@ The ServiceStack IDEA is now available to install directly from within a support
  4. Restart to load the installed ServiceStack IDEA plugin
 
 ![](https://raw.githubusercontent.com/ServiceStack/Assets/master/img/servicestackidea/android-plugin-download.gif)
+
+
+## Troubleshooting
+
+### Enabling TypeScript async/await 
+
+To make API requests using TypeScript's async/await feature you'll need to create a TypeScript `tsconfig.json` config file that imports ES6 promises and W3C fetch definitions with:
+
+```json
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": [ "es2015", "dom" ]
+  }
+}
+```
+

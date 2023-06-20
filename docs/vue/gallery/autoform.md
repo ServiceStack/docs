@@ -137,7 +137,7 @@ By default Auto Forms are rendered in a `SlideOver` dialog:
 These Auto Forms are powered by the rich [App Metadata](/vue/use-metadata) surrounding your APIs,
 which contain all the necessary metadata to invoke the API and bind any contextual validation errors adjacent to the invalid field inputs.
 
-<ApiReference component="AutoEditForm">Edit Form</ApiReference>
+<ApiReference id="edit-form" component="AutoEditForm">Edit Form</ApiReference>
 
 `AutoEditForm` can be used to render an automated form based on Update and Delete
 [AutoQuery CRUD](/autoquery-crud) APIs which also makes use of **heading** and **sub-heading** customization options:
@@ -193,6 +193,7 @@ public class UpdateBooking : IPatchDb<Booking>, IReturn<IdResponse>
     public DateTime? BookingEndDate { get; set; }
     [Input(Type = "textarea")]
     public string? Notes { get; set; }
+    public string? CouponId { get; set; }
     public bool? Cancelled { get; set; }
 }
 ```

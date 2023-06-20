@@ -32,10 +32,11 @@ for access to more advanced npm library features and to learn about Jamstack CDN
 
 To help choosing which template to start with, here's a quick summary of their differences:
 
- - **vue-mjs** - Flagship Vue.mjs template complete with [OrmLite](/ormlite/), [AutoQuery](/autoquery), [boosted htmx](https://htmx.org/attributes/hx-boost/) links & [static pre-rendered blogs](https://vue-mjs.web-templates.io/blog/prerendering)
- - **razor-tailwind** - Simpler Razor Pages Template without a configured DB or static pre-rendered blogs
+ - **vue-mjs** - Flagship Vue.mjs template complete with [OrmLite](/ormlite/), [AutoQuery](/autoquery) & [blogs](https://vue-mjs.web-templates.io/blog)
+ - **razor-tailwind** - Simpler Razor Pages Template without a configured DB
  - **mvc-tailwind** - Want to use MVC Identity Auth and Entity Framework
  - **web-tailwind** - Empty tailwind template who don't want to use Razor Pages or MVC
+ - **razor-ssg** - Want to create a static generated App with Razor to host on CDNs for free
  - **vue-vite** - Want to use TypeScript in a simpler JAMStack Vite SPA App
  - **vue-ssg** - Want to use TypeScript in an advanced JAMStack Vite SSG App
 
