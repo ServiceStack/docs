@@ -11,9 +11,13 @@ Redis, standing for REmote DIctionary Server, is an open-source, in-memory data 
 
 Redis supports various kinds of data structures like [strings](https://redis.io/docs/data-types/strings), [hashes](https://redis.io/docs/data-types/hashes), [lists](https://redis.io/docs/data-types/lists), [sets](https://redis.io/docs/data-types/sets), [sorted sets with range queries](https://redis.io/docs/data-types/sorted-set), [bitmaps](https://redis.io/docs/data-types/bitmaps), [hyperloglogs](https://redis.io/docs/data-types/hyperloglogs), and geospatial indexes with [radius queries](https://redis.io/docs/data-types/geospatial). This wide array of data types and its ability to perform [atomic operations](https://redis.io/docs/manual/transactions/) make Redis extremely versatile for solving a myriad of problems.
 
+![](../images/redis/getting-started/key-features.png)
+
 ## High Performance and Speed
 
 This support for a wide array of fundamental computational storage data structures is what sets Redis apart, and enables [blazing speed](https://redis.io/topics/benchmarks) when applied correctly. As an in-memory data store, reading and writing data happens exceedingly fast. This makes Redis an excellent choice for applications that require real-time data processing.
+
+![](../images/redis/getting-started/performance.png)
 
 ## Durability and Persistence
 
@@ -22,6 +26,8 @@ Even though Redis is an in-memory data store, it provides mechanisms to achieve 
 ## Scalability and High Availability
 
 Redis has robust features like [replication](https://redis.io/topics/replication), [Lua scripting](https://redis.io/commands/eval), [transactions](https://redis.io/docs/manual/transactions), and different levels of [on-disk persistence](https://redis.io/topics/persistence). With the help of [Redis Sentinel](https://redis.io/topics/sentinel), it provides high availability via automatic partitioning across multiple Redis nodes. It is also widely supported on major cloud providers as a managed service, like on [AWS under the ElastiCache product](https://aws.amazon.com/elasticache/redis/).
+
+![](../images/redis/getting-started/durability.png)
 
 ## Extensible and Versatile
 
@@ -120,7 +126,6 @@ This automatically adds the ServiceStack.Redis library to your project and sets 
 
 For further information on using the `x` tool, refer to the [ServiceStack `x` tool documentation](https://docs.servicestack.net/dotnet-tool).
 
-This wraps up the installation and setup of the ServiceStack.Redis library in your project. In the next section, we will cover how to use this library to interact with your Redis server.
 
 ## Connecting and Using Redis Client Managers
 
