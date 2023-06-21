@@ -7,6 +7,10 @@
         "link": "/redis/"
       },
       {
+        "text": "Getting Started",
+        "link": "/redis/getting-started"
+      },
+      {
         "text": "Redis Client Managers",
         "link": "/redis/client-managers"
       },
