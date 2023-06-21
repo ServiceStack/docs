@@ -9,7 +9,7 @@ Redis, standing for REmote DIctionary Server, is an open-source, in-memory data 
 
 ## Key Features of Redis
 
-Redis supports various kinds of data structures like [strings](https://redis.io/docs/data-types/strings), [hashes](https://redis.io/docs/data-types/hashes), [lists](https://redis.io/docs/data-types/lists), [sets](https://redis.io/docs/data-types/sets), [sorted sets with range queries](https://redis.io/docs/data-types/sorted-set), [bitmaps](https://redis.io/docs/data-types/bitmaps), [hyperloglogs](https://redis.io/docs/data-types/hyperloglogs), and geospatial indexes with [radius queries](https://redis.io/docs/data-types/geospatial). This wide array of data types and its ability to perform [atomic operations](https://redis.io/docs/manual/transactions/) make Redis extremely versatile for solving a myriad of problems.
+Redis supports various kinds of data structures like [strings](https://redis.io/docs/data-types/strings), [hashes](https://redis.io/docs/data-types/hashes), [lists](https://redis.io/docs/data-types/lists), [sets](https://redis.io/docs/data-types/sets), [sorted sets with range queries](https://redis.io/docs/data-types/sorted-sets), [bitmaps](https://redis.io/docs/data-types/bitmaps), [hyperloglogs](https://redis.io/docs/data-types/hyperloglogs), and geospatial indexes with [radius queries](https://redis.io/docs/data-types/geospatial). This wide array of data types and its ability to perform [atomic operations](https://redis.io/docs/manual/transactions/) make Redis extremely versatile for solving a myriad of problems.
 
 ![](../images/redis/getting-started/key-features.png)
 
@@ -163,7 +163,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Now, the DI container will manage the lifecycle of the `RedisManagerPool`, and you can inject `IRedisClientsManager` into your services or controllers:
+Now, the DI container will manage the lifecycle of the `RedisManagerPool`, and you can inject [`IRedisClientsManager`](https://reference.servicestack.net/api/ServiceStack.Redis/IRedisClientsManager/) into your services:
 
 ```csharp
 public class MyService : Service
@@ -192,8 +192,6 @@ public class MyService : Service
     }
 }
 ```
-
-For further information about Redis client managers and their usage, you can refer to the [ServiceStack.Redis documentation](https://docs.servicestack.net/redis-client-manager).
 
 ## Leveraging the Simplicity of ICacheClient
 
