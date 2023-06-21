@@ -243,7 +243,7 @@ public class MyService : Service
 }
 ```
 
-By using `ICacheClient`, you can make your application agnostic of the underlying cache implementation, which promotes loose coupling and makes your application easier to test and maintain. You can learn more about the `ICacheClient` interface and its usage in the [ServiceStack documentation](https://docs.servicestack.net/caching).
+By using `ICacheClient`, you can make your application agnostic of the underlying cache implementation, which promotes loose coupling and makes your application easier to test and maintain. You can learn more about the `ICacheClient` interface and its usage in the [Caching providers documentation](/caching).
 
 ## Using the RedisClient Directly
 
@@ -290,7 +290,7 @@ The `Increment` method corresponds to the INCR command in raw Redis:
 INCR counter
 ```
 
-By using `IRedisClient` directly, you have access to the entire set of Redis commands and data structures, which makes it a powerful tool for more advanced use cases. To learn more about the `IRedisClient` interface and its usage, refer to the [ServiceStack documentation](https://docs.servicestack.net/csharp-client#redis-client).
+By using `IRedisClient` directly, you have access to the entire set of Redis commands and data structures, which makes it a powerful tool for more advanced use cases. To learn more about the `IRedisClient` interface and its usage, refer to the [ServiceStack reference documentation site](https://reference.servicestack.net/api/ServiceStack.Redis/IRedisClient/).
 
 ## Async Usability of ServiceStack.Redis
 
