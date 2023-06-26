@@ -3,6 +3,11 @@ slug: getting-started
 title: Getting Started with Redis in .NET
 ---
 
+<div class="py-8 max-w-7xl mx-auto">
+    <iframe class="video-hd" width="560" height="315" src="https://www.youtube.com/embed/jBdOvTvjyqY" title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 # Introduction to Redis as a Technology
 
 Redis, standing for REmote DIctionary Server, is an open-source, in-memory data structure store. It's widely used as a database, cache, and message broker. With its unique set of features and unparalleled speed, it's a crucial tool for a modern developer's toolkit.
