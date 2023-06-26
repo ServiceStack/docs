@@ -518,7 +518,7 @@ Which the Blazor C# App can use directly in its **.razor** pages:
 
 ### FileUpload Control
 
-The File Upload UI component used in the [File Blazor Demo](/locode/files-blazor) has been extracted into a reusable Blazor component you can utilize in your own apps, here's what it looks like on [file.locode.dev](https://file.locode.dev):
+The File Upload UI component used in the [File Blazor Demo](/locode/files-blazor) has been extracted into a reusable Blazor component you can utilize in your own apps:
 
 ![](/images/templates/fileupload-blazor-usage-example.png)
 

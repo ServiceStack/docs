@@ -16,11 +16,11 @@
             <h1>
                 <span class="block text-base text-center text-indigo-600 font-semibold tracking-wide uppercase">Introducing</span>
                 <span class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    <a href="https://file.locode.dev">file.locode.dev</a>                    
+                    <a href="https://github.com/NetCoreApps/FileBlazor">NetCoreApps/FileBlazor</a>                    
                 </span>
             </h1>
             <p class="mt-8 text-xl text-gray-500 leading-8">
-                <a href="https://file.locode.dev">file.locode.dev</a> is a Blazor Demo utilizing the 
+                <a href="https://github.com/NetCoreApps/FileBlazor">NetCoreApps/FileBlazor</a> is a Blazor Demo utilizing the 
                 <code class="bg-blue-50 text-blue-500 py-1 px-2 rounded">FileUploadFeature</code>
                 plugin to provide an easy and flexible solution for quickly creating APIs services for uploading/downloading files to a variety of storage types.
             </p>
