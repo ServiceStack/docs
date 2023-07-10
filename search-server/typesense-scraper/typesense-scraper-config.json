@@ -21,7 +21,7 @@
   "stop_urls": ["https://docs.servicestack.net/release*"],
   "selectors": {
     "default": {
-      "lvl0": ".page h1",
+      "lvl0": "h1",
       "lvl1": ".content h2",
       "lvl2": ".content h3",
       "lvl3": ".content h4",
