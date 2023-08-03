@@ -64,83 +64,53 @@ jobs:
           docker run -i --env-file typesense-scraper-updated.env -e "CONFIG=$(cat typesense-scraper-config.json | jq -r tostring)" typesense/docsearch-scraper
           curl 'http://172.17.0.2:8108/keys' -X POST -H "X-TYPESENSE-API-KEY: ${TYPESENSE_API_KEY}" -H 'Content-Type: application/json' -d '{"value": "N4N8bF0XwyvzwCGwm3CKB0QcnwyWtygo","description": "Search only","actions": ["documents:search"],"collections":["*"]}'
 
-      - name: repository name fix
-        run: echo "image_repository_name=docs-search" >> $GITHUB_ENV
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
-      - name: Login to Amazon ECR
-        id: login_ecr
-        uses: aws-actions/amazon-ecr-login@v1
-
-      - name: Build and push to ECR
-        id: push_image_to_ecr
-        uses: docker/build-push-action@v2.2.2
-        with:
-          file: ./typesense-data/Dockerfile
-          context: ./typesense-data/
-          push: true
-          tags: ${{ steps.login_ecr.outputs.registry }}/${{ env.image_repository_name }}:latest
-
-  deploy_ecs:
-    needs: build
-    runs-on: ubuntu-20.04
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-
-      - name: Login to Amazon ECR
-        id: login_ecr
-        uses: aws-actions/amazon-ecr-login@v1
-
-      - name: Repository name fix and env values setup
+      - name: repository name fix and env
         run: |
+          echo "letsencrypt_email=${{ secrets.LETSENCRYPT_EMAIL }}" >> $GITHUB_ENV
+          echo "TAG_NAME=latest" >> $GITHUB_ENV
+          if [ "${{ github.event.release.tag_name }}" != "" ]; then
+            echo "TAG_NAME=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
+          fi;
+          if [ "${{ github.event.inputs.version }}" != "" ]; then
+            echo "TAG_NAME=${{ github.event.inputs.version }}" >> $GITHUB_ENV
+          fi;
           echo "image_repository_name=docs-search" >> $GITHUB_ENV
           echo "domain=search.docs.servicestack.net" >> $GITHUB_ENV
           echo "letsencrypt_email=${{ secrets.LETSENCRYPT_EMAIL }}" >> $GITHUB_ENV
           echo "app_name=servicestack-docs-search" >> $GITHUB_ENV
-          echo "cluster_name=default" >> $GITHUB_ENV
-          echo "image_url=${{ steps.login_ecr.outputs.registry }}/docs-search:latest" >> $GITHUB_ENV
-          echo "aws_region=${{ secrets.AWS_REGION }}" >> $GITHUB_ENV
           echo "typesense_api_key=${{ secrets.TYPESENSE_API_KEY }}" >> $GITHUB_ENV
 
-      - name: Populate task definition template
-        uses: danielr1996/envsubst-action@1.0.0
-        env:
-          RELEASE_VERSION: latest
-          APP_NAME: ${{ env.app_name }}
-          IMAGE_URL: ${{ env.image_url }}
-          HOST_DOMAIN: ${{ env.domain }}
-          TYPESENSE_API_KEY: ${{ env.typesense_api_key }}
-          LETSENCRYPT_EMAIL: ${{ env.letsencrypt_email }}
-          AWS_REGION: ${{ env.aws_region }}
-          CLUSTER_NAME: ${{ env.cluster_name }}
+      - name: Write .env file
+        run: |
+          echo "HOST_DOMAIN=${{ env.domain }}" > .env
+          echo "LETSENCRYPT_EMAIL=${{ env.letsencrypt_email }}" >> .env
+          echo "TYPESENSE_API_KEY=${{ env.typesense_api_key }} >> .env
+          
+      # Copy only the docker-compose.yml to remote server home folder
+      - name: copy compose file via scp
+        uses: appleboy/scp-action@v0.1.3
         with:
-          input: search-server/typesense-server/typesense-task-def.json
-          output: task-definition.json
-
-      - name: Create task definition if doesn't exist
-        run: aws ecs describe-task-definition --task-definition ${{ env.app_name }} || aws ecs register-task-definition --cli-input-json file://task-definition.json
-
-      - name: Create ECS Service if not exists.
-        run: aws ecs describe-services --cluster ${{ env.cluster_name }} --services ${{ env.app_name }} | jq '.services[0]' -e || aws ecs create-service --cluster ${{ env.cluster_name }} --service-name ${{ env.app_name }} --task-definition ${{ env.app_name }} --desired-count 1
-
-      - name: Deploy new revision of the task definition
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-        with:
-          task-definition: task-definition.json
-          service: ${{ env.app_name }}
-          cluster: ${{ env.cluster_name }}
-          force-new-deployment: true
+          host: 52.201.116.245
+          username: ${{ secrets.DEPLOY_USERNAME }}
+          port: 22
+          key: ${{ secrets.DEPLOY_KEY }}
+          source: "search-server/typesense-server/docker-compose.yml,.env"
+          target: "~/.deploy/docs-typesense"
+          
+#       # Deploy Docker image with ServiceStack application using `docker compose up` remotely
+#       - name: remote docker-compose up via ssh
+#         uses: appleboy/ssh-action@v0.1.5
+#         env:
+#           APPTOKEN: ${{ secrets.GITHUB_TOKEN }}
+#           USERNAME: ${{ secrets.DEPLOY_USERNAME }}
+#         with:
+#           host: 52.201.116.245
+#           username: ${{ secrets.DEPLOY_USERNAME }}
+#           key: ${{ secrets.DEPLOY_KEY }}
+#           port: 22
+#           envs: APPTOKEN,USERNAME
+#           script: |
+#             echo $APPTOKEN | docker login ghcr.io -u $USERNAME --password-stdin
+#             cd ~/.deploy/docs-typesense
+#             docker compose pull
+#             docker compose up -d
