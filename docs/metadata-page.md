@@ -25,7 +25,7 @@ You can also optionally add custom annotations and documentation on services whi
 [Api("Service Description")]
 [Route("/swagger/{Name}", "GET", Summary = "GET Summary", Notes="Notes")]
 [Route("/swagger/{Name}", "POST", Summary ="POST Summary", Notes="Notes")]
-public class MyRequestDto
+public class SwaggerTest
 {
     [ApiMember(Name="Name", Description = "Name Description", 
         ParameterType = "path", DataType = "string", IsRequired = true)]
