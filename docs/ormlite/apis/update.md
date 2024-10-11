@@ -137,7 +137,7 @@ var updateFields = new Dictionary<string,object> {
     [nameof(Person.FirstName)] = "JJ",
 };
 
-db.UpdateOnlyFields<Person>(updateFields, p => p.LastName == "Hendrix");
+db.UpdateOnly<Person>(updateFields, p => p.LastName == "Hendrix");
 ```
 
 Using a typed SQL Expression:
